@@ -6,6 +6,7 @@ body{
     background: red;
     border-radius: 250px 250px 0 0;
     min-height: 200px;
+    font-size: 40px;
 }
 
 #page-wrapper {
@@ -14,9 +15,24 @@ body{
     min-height: 800px;
 }
 
+#busca {
+    float: right;
+}
+
 .poke{
     height:50%;
     width:100%;
     text-align: center;
     color: black;
+}
+
+.nav-wrapper {
+   width:100%;
+   background:#1b1b1b;
+   min-height: 30px;
+}
+
+.nav-menu li {
+   display: inline;
+   list-style-type: none;
 }
