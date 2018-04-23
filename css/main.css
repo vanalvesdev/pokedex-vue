@@ -1,5 +1,6 @@
 body{
-    background: black
+    background: black;
+    font-size: 22px;
 }
 
 #head-wrapper {
@@ -11,8 +12,8 @@ body{
 
 #page-wrapper {
     background: white;
-    border-radius: 0 0 250px 250px;
     min-height: 800px;
+    margin: auto;
 }
 
 #busca {
@@ -35,4 +36,22 @@ body{
 .nav-menu li {
    display: inline;
    list-style-type: none;
+}
+
+.poke-type{
+  text-align: center;
+}
+
+.poke-type .grass{
+  background-color: #9bcc50;
+  color: black;
+}
+
+.poke-type .poison{
+  background-color: #b97fc9;
+  color: white;
+}
+
+.card-header img{
+  margin: auto;
 }
