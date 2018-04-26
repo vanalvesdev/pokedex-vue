@@ -1,4 +1,4 @@
-body{
+body {
     background: black;
     font-size: 22px;
 }
@@ -20,38 +20,115 @@ body{
     float: right;
 }
 
-.poke{
-    height:50%;
-    width:100%;
+.poke {
+    height: 50%;
+    width: 100%;
     text-align: center;
     color: black;
 }
 
 .nav-wrapper {
-   width:100%;
-   background:#1b1b1b;
-   min-height: 30px;
+    width: 100%;
+    background: #1b1b1b;
+    min-height: 30px;
 }
 
 .nav-menu li {
-   display: inline;
-   list-style-type: none;
+    display: inline;
+    list-style-type: none;
 }
 
-.poke-type{
-  text-align: center;
+.poke-type {
+    text-align: center;
 }
 
-.poke-type .grass{
-  background-color: #9bcc50;
-  color: black;
+.poke-type .grass {
+    background-color: #9bcc50;
+    color: black;
 }
 
-.poke-type .poison{
-  background-color: #b97fc9;
-  color: white;
+.poke-type .poison {
+    background-color: #b97fc9;
+    color: white;
 }
 
-.card-header img{
-  margin: auto;
+.poke-type .fire {
+    background-color: #fd7d24;
+    color: white;
+}
+
+.poke-type .water {
+    background-color: #4592c4;
+    color: white;
+}
+
+.poke-type .bug {
+    background-color: #729f3f;
+    color: white;
+}
+
+.poke-type .normal {
+    background-color: #a4acaf;
+    color: black;
+}
+
+.poke-type .eletric {
+    background-color: #eed535;
+    color: black;
+}
+
+.poke-type .fairy {
+    background-color: #fdb9e9;
+    color: black;
+}
+
+.poke-type .fighting {
+    background-color: #d56723;
+    color: white;
+}
+
+.poke-type .psychic {
+    background-color: #f366b9;
+    color: white;
+}
+
+.poke-type .steel {
+    background-color: #9eb7b8;
+    color: black;
+}
+
+.poke-type .ice {
+    background-color: #51c4e7;
+    color: black;
+}
+
+.poke-type .ghost {
+    background-color: #7b62a3;
+    color: white;
+}
+
+.poke-type .rock {
+    background-color: #a38c21;
+    color: white;
+}
+
+.poke-type .dark {
+    background-color: #707070;
+    color: white;
+}
+
+.poke-type .flying {
+    color: black;
+}
+
+.poke-type .dragon {
+    color: white;
+}
+
+.poke-type .ground {
+    color: black;
+}
+
+.card-header img {
+    margin: auto;
 }
