@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/bulma.css" />
-    <script src="js/main.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav-wrapper">
@@ -28,29 +30,28 @@
     </header>
     <div id="page-wrapper" class="poke">
         <div class="container">
-            <div class="columns is-multiline">
-                <div class="column is-one-fifth">
-                    <a href="#!">
+            <div class="columns is-multiline" id="app-poke">
+                <div class="column is-one-fifth"  v-for="poke in pokes">
+                    <a :href="poke.name">
                         <div class="card">
                             <header class="card-header">
-                                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Placeholder image">
+                                <div class="card-image">
+                                    <figure class="image">
+                                        <img :src="poke.image"  alt="Placeholder image">
+                                    </figure>
+                                </div>
                             </header>
                             <div class="card-content">
                                 <div class="media-content">
                                     <div class="columns poke-type">
-                                        <div class="column">
-                                            <div class="grass">
-                                                <span>Grass</span>    
-                                            </div>
-                                        </div>
-                                        <div class="column">
-                                            <div class="poison">
-                                                <span>Poison</span>
+                                        <div class="column" v-for="type in poke.types">
+                                            <div :class="type">
+                                                <span>{{type}}</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <h1 class="title is-hidden-tablet-only is-hidden-mobile">Bulbasaur</h1>
-                                    <h1 class="title is-4  is-hidden-desktop">Bulbasaur</h1>
+                                    <h1 class="title is-hidden-tablet-only is-hidden-mobile">{{ poke.name }}</h1>
+                                    <h1 class="title is-4  is-hidden-desktop">{{ poke.name }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -59,5 +60,6 @@
             </div>
         </div>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>

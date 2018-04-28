@@ -52,6 +52,10 @@ body{
   color: white;
 }
 
-.card-header img{
+.card-header .card-image{
   margin: auto;
+}
+
+.card-content{
+    text-transform: capitalize;
 }
