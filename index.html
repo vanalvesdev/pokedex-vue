@@ -44,9 +44,9 @@
                             <div class="card-content">
                                 <div class="media-content">
                                     <div class="columns poke-type">
-                                        <div class="column" v-for="type in poke.types">
-                                            <div :class="type">
-                                                <span>{{type}}</span>
+                                        <div :class="['column', type.slot > 1 ? 'is-pulled-right' : 'is-pulled-left']" v-for="type in poke.types">
+                                            <div :class="type.name">
+                                                <span>{{type.name}}</span>
                                             </div>
                                         </div>
                                     </div>

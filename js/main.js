@@ -11,8 +11,8 @@ var app_poke = new Vue({
 
         this.types = JSON.parse(localStorage.getItem('types'));
         if(this.types === null){
-           this.types = [];
-           let result = httpGet('https://pokeapi.co/api/v2/type/');
+            this.types = [];
+            let result = httpGet('https://pokeapi.co/api/v2/type/');
             let simpleTypes = result.results;
             simpleTypes.forEach(type => {
                 let complexType = httpGet('https://pokeapi.co/api/v2/type/'+type.name+'/');
@@ -20,14 +20,8 @@ var app_poke = new Vue({
                 console.log(complexType);
             });
 
-            this.types.forEach(type => {
-                type.pokemon.sort((a,b) => {return a.slot - b.slot});
-            });
-
             localStorage.setItem('types', JSON.stringify(this.types));
         }
-
-        console.log(this.types);
 
         axios.get('https://pokeapi.co/api/v2/pokemon/').then((response) => {
             this.pokes = response.data.results;
@@ -37,12 +31,11 @@ var app_poke = new Vue({
                 item.types = [];
                 this.types.forEach(element => {
                     var pokeTypes = element.pokemon.filter((type) => {return type.pokemon.name === item.name});
-                    if(pokeTypes.length > 0){
-                        Array.prototype.push.call(item.types, element.name);
-                    }
+                    pokeTypes.forEach(pokeType => {
+                        Array.prototype.push.call(item.types, {"name":element.name, "slot":pokeTypes[0].slot});
+                    })
                 });
             })
-            
         })
         
 
