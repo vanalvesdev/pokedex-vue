@@ -42,6 +42,14 @@ body {
     text-align: center;
 }
 
+.poke-type .type-1 {
+    order: 1;
+}
+
+.poke-type .type-2 {
+    order: 2;
+}
+
 .poke-type .grass {
     background-color: #9bcc50;
     color: black;
