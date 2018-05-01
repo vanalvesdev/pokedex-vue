@@ -30,37 +30,50 @@
     </header>
     <div id="page-wrapper" class="poke">
         <div class="container">
-            <div class="columns is-multiline" id="app-poke">
-                <div class="column is-one-fifth"  v-for="poke in pokes">
-                    <a :href="poke.name">
-                        <div class="card">
-                            <header class="card-header">
-                                <div class="card-image">
-                                    <figure class="image">
-                                        <img :src="poke.image"  alt="Placeholder image">
-                                    </figure>
-                                </div>
-                            </header>
-                            <div class="card-content">
-                                <div class="media-content">
-                                    <div class="columns poke-type">
-                                        <div :class="['column', type.slot > 1 ? 'type-2' : 'type-1']" v-for="type in poke.types">
-                                            <div :class="type.name">
-                                                <span>{{type.name}}</span>
+            <div id="app-poke">
+                <div class="columns is-multiline" id="app-poke">
+                    <div class="column is-one-fifth"  v-for="poke in pokes">
+                        <a :href="poke.name">
+                            <div class="card">
+                                <header class="card-header">
+                                    <div class="card-image">
+                                        <figure class="image">
+                                            <img :src="poke.image"  alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                </header>
+                                <div class="card-content">
+                                    <div class="media-content">
+                                        <div class="columns poke-type">
+                                            <div :class="['column', type.slot > 1 ? 'type-2' : 'type-1']" v-for="type in poke.types">
+                                                <div :class="type.name">
+                                                    <span>{{type.name}}</span>
+                                                </div>
                                             </div>
                                         </div>
+                                        <h1 class="title is-hidden-tablet-only is-hidden-mobile">{{ poke.name }}</h1>
+                                        <h1 class="title is-4  is-hidden-desktop">{{ poke.name }}</h1>
                                     </div>
-                                    <h1 class="title is-hidden-tablet-only is-hidden-mobile">{{ poke.name }}</h1>
-                                    <h1 class="title is-4  is-hidden-desktop">{{ poke.name }}</h1>
                                 </div>
                             </div>
-                        </div>
-                    </a>                                                                                                                        
+                        </a>                                                                                                                        
+                    </div>
                 </div>
+                <a class="button botao is-medium" v-bind:class="{'is-loading': loading, 'is-hidden': !next}" v-on:click="fetchPokemons(next)">Carregar mais Pokémons</a>
             </div>
         </div>
-        <button type="button" class="botao">Clique para carregar mais Pokemons</button>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+            <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+            </div>
+        </div>
+    </footer>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -5,7 +5,9 @@ var app_poke = new Vue({
     el: "#app-poke",
     data:{
         pokes: [],
-        types: []
+        types: [],
+        loading: true,
+        next: ""
     },
     ready(){
 
@@ -22,32 +24,28 @@ var app_poke = new Vue({
 
             localStorage.setItem('types', JSON.stringify(this.types));
         }
-
-        axios.get('https://pokeapi.co/api/v2/pokemon/').then((response) => {
-            this.pokes = response.data.results;
-            this.pokes.forEach((item) => {
-                item.id = item.url.slice(34, item.url.length - 1);
-                item.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/".concat(item.id < 100 ? item.id < 10 ?'00'+ item.id : '0'+ item.id : item.id).concat(".png");
-                item.types = [];
-                this.types.forEach(element => {
-                    var pokeTypes = element.pokemon.filter((type) => {return type.pokemon.name === item.name});
-                    pokeTypes.forEach(pokeType => {
-                        Array.prototype.push.call(item.types, {"name":element.name, "slot":pokeTypes[0].slot});
-                    })
-                });
+        this.fetchPokemons('https://pokeapi.co/api/v2/pokemon/');
+    },
+    methods:{
+        fetchPokemons: function (url){
+            this.loading = true;
+            axios.get(url).then((response) => {
+                this.next = response.data.next;
+                this.pokes.push.apply(this.pokes, response.data.results);
+                this.pokes.forEach((item) => {
+                    item.id = item.url.slice(34, item.url.length - 1);
+                    item.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/".concat(item.id < 100 ? item.id < 10 ?'00'+ item.id : '0'+ item.id : item.id).concat(".png");
+                    item.types = [];
+                    this.types.forEach(element => {
+                        var pokeTypes = element.pokemon.filter((type) => {return type.pokemon.name === item.name});
+                        pokeTypes.forEach(pokeType => {
+                            Array.prototype.push.call(item.types, {"name":element.name, "slot":pokeTypes[0].slot});
+                        })
+                    });
+                })
+                this.loading = false;
             })
-        })
-        
-
-        /*this.$http.get('https://pokeapi.co/api/v2/pokemon/').then((response) => {
-            this.pokes = response.body.results;
-            this.pokes.forEach((item) => {
-                item.id = item.url.slice(34, item.url.length - 1);
-                item.image = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/".concat(item.id < 100 ? item.id < 10 ?'00'+ item.id : '0'+ item.id : item.id).concat(".png");
-            })
-            next = response.body.next;
-            prev = response.body.prev;
-        })*/
+        }
     }
 });
 
