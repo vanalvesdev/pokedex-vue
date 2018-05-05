@@ -24,7 +24,6 @@
                 </div>
         </nav>
     </div>
-    
     <header id="head-wrapper" class="poke">
         <h1>Pokedex</h1>
     </header>
@@ -34,7 +33,7 @@
                 <div class="columns is-multiline" id="app-poke">
                     <div class="column is-one-fifth"  v-for="poke in pokes">
                         <a :href="poke.name">
-                            <div class="card">
+                            <a href="pokemon.html"><div class="card">
                                 <header class="card-header">
                                     <div class="card-image">
                                         <figure class="image">
@@ -55,7 +54,7 @@
                                         <h1 class="title is-4  is-hidden-desktop">{{ poke.name }}</h1>
                                     </div>
                                 </div>
-                            </div>
+                            </div></a>
                         </a>                                                                                                                        
                     </div>
                 </div>
