@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/bulma.css" />
     <script src="js/vue.min.js"></script>
     <script src="js/axios.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <div class="nav-wrapper">
@@ -29,10 +29,10 @@
         <h1>Pokedex</h1>
     </header>
     <div id="page-wrapper" class="poke">
-        <div class="poke-name">Bulbassaur #001</div>
+        <div class="poke-name">{{ poke.name }} #{{ completeId }}</div>
         <div class="left">
             <div class="pokemon-image">
-                <img id="pokeimage" alt="Placeholder image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png">
+                <img id="pokeimage" :src="image"  alt="Placeholder image">
             </div>
             <div class="stats">
                 Stats
@@ -74,6 +74,6 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/pokemon.js"></script>
 </body>
 </html>
