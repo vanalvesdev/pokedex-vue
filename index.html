@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/bulma.css" />
     <script src="js/vue.min.js"></script>
     <script src="js/axios.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <div class="nav-wrapper">
@@ -33,7 +33,7 @@
             <div id="app-poke">
                 <div class="columns is-multiline" id="app-poke">
                     <div class="column is-one-fifth"  v-for="poke in pokes">
-                        <a :href="poke.name">
+                        <a :href="'pokemon.html?n='+poke.name">
                             <div class="card">
                                 <header class="card-header">
                                     <div class="card-image">
@@ -59,7 +59,7 @@
                         </a>                                                                                                                        
                     </div>
                 </div>
-                <a class="button botao is-medium" v-bind:class="{'is-loading': loading, 'is-hidden': !next}" v-on:click="fetchPokemons(next)">Carregar mais Pokémons</a>
+                <a class="button botao is-medium" v-bind:class="{'is-loading': loading}" v-on:click="fetchPokemons()" v-show="next">Carregar mais Pokémons</a>
             </div>
         </div>
     </div>
@@ -75,5 +75,11 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+        let uri = window.location.href;
+        let url = new URL(uri);
+        var c = url.searchParams.get("n");
+        console.log(c);
+    </script>
 </body>
 </html>

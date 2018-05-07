@@ -1,5 +1,5 @@
 Vue.config.devtools = true;
-//Vue.use(VueResource);
+Vue.config.performance = true;
 
 var app_poke = new Vue({
     el: "#app-poke",
@@ -7,10 +7,9 @@ var app_poke = new Vue({
         pokes: [],
         types: [],
         loading: true,
-        next: ""
+        next: "https://pokeapi.co/api/v2/pokemon/"
     },
     ready(){
-
         this.types = JSON.parse(localStorage.getItem('types'));
         if(this.types === null){
             this.types = [];
@@ -24,12 +23,12 @@ var app_poke = new Vue({
 
             localStorage.setItem('types', JSON.stringify(this.types));
         }
-        this.fetchPokemons('https://pokeapi.co/api/v2/pokemon/');
+        this.fetchPokemons();
     },
     methods:{
-        fetchPokemons: function (url){
+        fetchPokemons(){
             this.loading = true;
-            axios.get(url).then((response) => {
+            axios.get(this.next).then((response) => {
                 this.next = response.data.next;
                 this.pokes.push.apply(this.pokes, response.data.results);
                 this.pokes.forEach((item) => {
