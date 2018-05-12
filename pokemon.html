@@ -29,52 +29,57 @@
         <h1>Pokedex</h1>
     </header>
     <div id="page-wrapper" class="poke">
-        <div class="poke-name">{{ poke.name }} #{{ completeId }}</div>
-        <div class="left">
-            <div class="pokemon-image">
-                <img id="pokeimage" :src="image"  alt="Placeholder image">
+            <div class="container">
+                    <div class="poke-name">{{ poke.name }} #{{ completeId }}</div>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-6 is-vertical is-parent">
+                            <div class="pokemon-image tile is-child box">
+                                <img id="pokeimage" :src="image"  alt="Placeholder image">
+                            </div>
+                            <div class="stats is-child box">
+                                Stats
+                                <nav class="poke-stats is-child box">
+                                    <ul>
+                                        <li>HP</li>
+                                        <li>Attack</li>
+                                        <li>Defense</li>
+                                        <li>Special Attack</li>
+                                        <li>Special Defense</li>
+                                        <li>Speed</li>
+                                    </ul>           
+                                </nav>
+                            </div>
+                        </div>
+        
+                        <div class="tile is-6 is-vertical is-parent">
+                            <div class="description tile is-child box">
+                                Descrição do Pokémon.
+                            </div>
+                            <div class="characters tile is-child box">
+                                Características do Pokémon.
+                            </div>
+                            <div class="typeweakness tile is-child box">
+                                Tipos do Pokémon.
+                            </div>
+                            <div class="typeweakness tile is-child box">
+                                Fraquezas do Pokémon.
+                            </div>
+                        </div>
+                    </div>
+               <!--<pre style="text-align: left;">{{ poke | json }}</pre>--> 
+                </div>
             </div>
-            <div class="stats">
-                Stats
-                <nav class="poke-stats">
-                    <ul>
-                        <li>HP</li>
-                        <li>Attack</li>
-                        <li>Defense<li>
-                        <li>Special Attack<li>
-                        <li>Special Defense<li>
-                        <li>Speed<li>           
-                </nav>
-            </div>
-        </div>
-        <div class="right">
-                <div id="description">
-                    Descrição do Pokémon.
+            <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                    <p>
+                        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                    </p>
+                    </div>
                 </div>
-                <div class="characters">
-                    Características do Pokémon.
-                </div>
-                <div class="typeweakness">
-                    Tipos do Pokémon.
-                </div>
-                <div class="typeweakness">
-                    Fraquezas do Pokémon.
-                </div>
-        </div>
-        <div>""</div>
-        <pre style="text-align: left;">{{ poke | json }}</pre>
-    </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="content has-text-centered">
-            <p>
-                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-            </p>
-            </div>
-        </div>
-    </footer>
-    <script src="js/pokemon.js"></script>
-</body>
-</html>
+            </footer>
+            <script src="js/pokemon.js"></script>
+        </body>
+        </html>
