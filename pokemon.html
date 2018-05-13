@@ -15,7 +15,7 @@
     <div class="nav-wrapper">
         <nav class="nav-menu">
             <ul>
-                <li><a href="#!">Home |</a></li>
+                <li><a href="index.html">Home |</a></li>
                 <li><a href="#!">Pokédex |</a></li>
                 <li><a href="#!">Sobre Nós</a><li>
                 <div id="busca">
@@ -37,37 +37,122 @@
                                 <img id="pokeimage" :src="image"  alt="Placeholder image">
                             </div>
                             <div class="stats is-child box">
-                                Stats
-                                <nav class="poke-stats is-child box">
+                                <p class="subtitle">Status</p>
                                     <ul>
-                                        <li>HP</li>
-                                        <li>Attack</li>
-                                        <li>Defense</li>
-                                        <li>Special Attack</li>
-                                        <li>Special Defense</li>
-                                        <li>Speed</li>
+                                        <li>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>HP</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Ataque</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Defesa</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>At. especial</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Def. especial</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Velocidade</span>
+                                            </ul>
+                                        </li>
                                     </ul>           
-                                </nav>
                             </div>
                         </div>
         
                         <div class="tile is-6 is-vertical is-parent">
                             <div class="description tile is-child box">
-                                Descrição do Pokémon.
+                                <p>Descrição do Pokémon.</p>
                             </div>
-                            <div class="characters tile is-child box">
-                                Características do Pokémon.
+                            <div class="characters tile is-child box has-background-info has-text-white     has-text-weight-bold">
+                                <ul>
+                                    <li>
+                                        <ul class="charli">
+                                            <li>Altura: </li>
+                                            <li>Peso: </li>
+                                            <li>Gênero: </li>    
+                                        </ul>
+                                        <ul class="charli">
+                                            <li>Categoria: </li>
+                                            <li>Habilidades: </li>
+                                        </ul>
+                                    </li>   
+                                </ul>
                             </div>
                             <div class="typeweakness tile is-child box">
-                                Tipos do Pokémon.
+                                <p class="subtitle">Tipo</p>
                             </div>
                             <div class="typeweakness tile is-child box">
-                                Fraquezas do Pokémon.
+                                <p class="subtitle">Fraquezas</p>
                             </div>
                         </div>
                     </div>
                <!--<pre style="text-align: left;">{{ poke | json }}</pre>--> 
                 </div>
+                <div style="margin-bottom: 3em;"></div>
             </div>
             <footer class="footer">
                 <div class="container">
