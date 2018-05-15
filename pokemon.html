@@ -15,7 +15,7 @@
     <div class="nav-wrapper">
         <nav class="nav-menu">
             <ul>
-                <li><a href="#!">Home |</a></li>
+                <li><a href="index.html">Home |</a></li>
                 <li><a href="#!">Pokédex |</a></li>
                 <li><a href="#!">Sobre Nós</a><li>
                 <div id="busca">
@@ -29,52 +29,142 @@
         <h1>Pokedex</h1>
     </header>
     <div id="page-wrapper" class="poke">
-        <div class="poke-name">{{ poke.name }} #{{ completeId }}</div>
-        <div class="left">
-            <div class="pokemon-image">
-                <img id="pokeimage" :src="image"  alt="Placeholder image">
+            <div class="container">
+                    <div class="poke-name">{{ poke.name }} #{{ completeId }}</div>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-6 is-vertical is-parent">
+                            <div class="pokemon-image tile is-child box">
+                                <img id="pokeimage" :src="image"  alt="Placeholder image">
+                            </div>
+                            <div class="stats is-child box">
+                                <p class="subtitle">Status</p>
+                                    <ul>
+                                        <li>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>HP</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Ataque</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Defesa</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>At. especial</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Def. especial</span>
+                                            </ul>
+                                            <ul class="stats-ul">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <span>Velocidade</span>
+                                            </ul>
+                                        </li>
+                                    </ul>           
+                            </div>
+                        </div>
+        
+                        <div class="tile is-6 is-vertical is-parent">
+                            <div class="description tile is-child box">
+                                <p>Descrição do Pokémon.</p>
+                            </div>
+                            <div class="characters tile is-child box has-background-info has-text-white     has-text-weight-bold">
+                                <ul>
+                                    <li>
+                                        <ul class="charli">
+                                            <li>Altura: </li>
+                                            <li>Peso: </li>
+                                            <li>Gênero: </li>    
+                                        </ul>
+                                        <ul class="charli">
+                                            <li>Categoria: </li>
+                                            <li>Habilidades: </li>
+                                        </ul>
+                                    </li>   
+                                </ul>
+                            </div>
+                            <div class="typeweakness tile is-child box">
+                                <p class="subtitle">Tipo</p>
+                            </div>
+                            <div class="typeweakness tile is-child box">
+                                <p class="subtitle">Fraquezas</p>
+                            </div>
+                        </div>
+                    </div>
+               <!--<pre style="text-align: left;">{{ poke | json }}</pre>--> 
+                </div>
+                <div style="margin-bottom: 3em;"></div>
             </div>
-            <div class="stats">
-                Stats
-                <nav class="poke-stats">
-                    <ul>
-                        <li>HP</li>
-                        <li>Attack</li>
-                        <li>Defense<li>
-                        <li>Special Attack<li>
-                        <li>Special Defense<li>
-                        <li>Speed<li>           
-                </nav>
-            </div>
-        </div>
-        <div class="right">
-                <div id="description">
-                    Descrição do Pokémon.
+            <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                    <p>
+                        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                    </p>
+                    </div>
                 </div>
-                <div class="characters">
-                    Características do Pokémon.
-                </div>
-                <div class="typeweakness">
-                    Tipos do Pokémon.
-                </div>
-                <div class="typeweakness">
-                    Fraquezas do Pokémon.
-                </div>
-        </div>
-        <div>""</div>
-        <pre style="text-align: left;">{{ poke | json }}</pre>
-    </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="content has-text-centered">
-            <p>
-                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-            </p>
-            </div>
-        </div>
-    </footer>
-    <script src="js/pokemon.js"></script>
-</body>
-</html>
+            </footer>
+            <script src="js/pokemon.js"></script>
+        </body>
+        </html>
