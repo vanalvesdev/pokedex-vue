@@ -43,7 +43,7 @@
                                 </header>
                                 <div class="card-content">
                                     <div class="media-content">
-                                        <div class="columns poke-type">
+                                        <div class="columns poke-type is-1 is-variable">
                                             <div :class="['column', type.slot > 1 ? 'type-2' : 'type-1']" v-for="type in poke.types">
                                                 <div :class="type.name">
                                                     <span>{{type.name}}</span>
